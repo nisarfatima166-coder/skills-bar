@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#007bff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:600px;
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.skill{
+    margin-bottom:25px;
+}
+
+.title{
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.progress{
+    width:100%;
+    height:15px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:visible;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    border-radius:10px;
+    position:relative;
+    animation:load 2s forwards;
+}
+
+/* Moving Percentage Bubble */
+.percent{
+    position:absolute;
+    right:0;
+    top:-30px;
+    background:#264de4;
+    color:#fff;
+    padding:4px 8px;
+    border-radius:15px;
+    font-size:11px;
+    white-space:nowrap;
+}
+
+/* Bubble Arrow */
+.percent::after{
+    content:"";
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+    transform:translateX(-50%);
+    border-width:4px;
+    border-style:solid;
+    border-color:#333 transparent transparent transparent;
+}
+
+/* Skill Colors + Width */
+.html{ background:#264de4; --width:90%; }
+.css{ background:#264de4; --width:70%; }
+.js{ background:#264de4; --width:50%; }
+.node{ background:#264de4; --width:30%; }
+
+@keyframes load{
+    100%{ width:var(--width); }
+}
